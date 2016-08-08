@@ -2,6 +2,7 @@
 
 import webkit, gtk, os
 import subprocess
+from sys import argv
 
 win = gtk.Window(gtk.WINDOW_TOPLEVEL)
 win.set_opacity(0.97)
@@ -20,8 +21,8 @@ win.move(right,top)
 win.set_size_request(265,bottom)
 win.connect('show', lambda w: win.set_size_request(265,bottom))
 win.connect('destroy', lambda w: gtk.main_quit())
-scroller = gtk.ScrolledWindow()
-win.add(scroller)
+#scroller = gtk.ScrolledWindow()
+#win.add(web)
 
 class WibKit(object):
 	web = webkit.WebView()
@@ -31,8 +32,8 @@ class WibKit(object):
 	websettings.set_property("javascript-can-open-windows-automatically", True)
 	websettings.set_property("enable-universal-access-from-file-uris", True)
 	web.load_uri("file://" + path + "/system/bevel.html")
-	scroller.add(web)
-	
+	#scroller.add(web)
+	win.add(web)
 	def navigation_requested_cb(view, frame, networkRequest):
 		uri = networkRequest.get_uri()
 		subprocess.Popen(['xdg-open', uri])
