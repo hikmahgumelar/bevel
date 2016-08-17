@@ -34,11 +34,8 @@ class WibKit(object):
 	web.load_uri("file://" + path + "/system/bevel.html")
 	#scroller.add(web)
 	win.add(web)
-	def navigation_requested_cb(view, frame, networkRequest):
-		uri = networkRequest.get_uri()
-		subprocess.Popen(['xdg-open', uri])
-		return 1
-		web.connect('navigation-requested', navigation_requested_cb)
+	
+		
 
 #win.add(web)
 win.show_all()

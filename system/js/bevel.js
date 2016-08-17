@@ -1,23 +1,27 @@
+//menggunakan exec() untuk pengganti Utils.run_command
+var exec = require('child_process').exec;
+
 function Run1() {
-	Utils.run_command("xdg-open http://blankonlinux.or.id");
+	exec("xdg-open http://blankonlinux.or.id");
+
 }
 function Run2() {
-	Utils.run_command("xdg-open http://panduan.blankonlinux.or.id");
+	exec("xdg-open http://panduan.blankonlinux.or.id");
 }
 function Run3() {
-	Utils.run_command("xdg-open https://facebook.com/groups/blankonlinux");
+	exec("xdg-open https://facebook.com/groups/blankonlinux");
 }
 function Run4() {
-	Utils.run_command("xdg-open https://twitter.com/BlankOnLinux");
+	exec("xdg-open https://twitter.com/BlankOnLinux");
 }
 
-function Play(){Utils.run_command("audacious -p");}
-function Stop(){Utils.run_command("audtool shutdown");}
-function Prev(){Utils.run_command("audacious -r");}
-function Next(){Utils.run_command("audacious -f");}
-function Pause(){Utils.run_command("audacious -u");}
-function Repeat(){Utils.run_command("audtool --playlist-repeat-toggle");}
-//function Shuffle(){Utils.run_command("audtool --playlist-shuffle-toggle");}
+function Play(){ exec("audacious -p");}
+function Stop(){ exec("audtool shutdown");}
+function Prev(){ exec("audacious -r");}
+function Next(){ exec("audacious -f");}
+function Pause(){ exec("audacious -u");}
+function Repeat(){ exec("audtool --playlist-repeat-toggle");}
+//function Shuffle(){exec("audtool --playlist-shuffle-toggle");}
 
 $(document).ready(function() {
 	$('#repeat').click(function(){
@@ -29,47 +33,47 @@ $(document).ready(function() {
 // gnome control center
 
 function RunWallpaper() {
-	Utils.run_command("gnome-control-center background");
+	exec("gnome-control-center background");
 }
 function RunAccount() {
-	Utils.run_command("gnome-control-center user-accounts");
+	exec("gnome-control-center user-accounts");
 }
 function RunSound() {
-	Utils.run_command("gnome-control-center sound");
+	exec("gnome-control-center sound");
 }
 function RunInfo() {
-	Utils.run_command("gnome-control-center info");
+	exec("gnome-control-center info");
 }
 function RunBluetooth() {
-	Utils.run_command("gnome-control-center bluetooth");
+	exec("gnome-control-center bluetooth");
 }
 function RunRegional() {
-	Utils.run_command("gnome-control-center region");
+	exec("gnome-control-center region");
 }
 function RunKeyboard() {
-	Utils.run_command("gnome-control-center keyboard");
+	exec("gnome-control-center keyboard");
 }
 function RunPower() {
-	Utils.run_command("gnome-control-center power");
+	exec("gnome-control-center power");
 }
 function RunDate() {
-	Utils.run_command("gnome-control-center datetime");
+	exec("gnome-control-center datetime");
 }
 function RunDisplay() {
-	Utils.run_command("gnome-control-center display");
+	exec("gnome-control-center display");
 }
 function RunMouse() {
-	Utils.run_command("gnome-control-center mouse");
+	exec("gnome-control-center mouse");
 }
 function RunNetwork() {
-	Utils.run_command("gnome-control-center network");
+	exec("gnome-control-center network");
 }
 function RunOnline() {
-	Utils.run_command("gnome-control-center online-accounts");
+	exec("gnome-control-center online-accounts");
 }
 function RunPrinter() {
-	Utils.run_command("system-config-printer");
+	exec("system-config-printer");
 }
 function RunShare() {
-	Utils.run_command("gnome-control-center sharing");
+	exec("gnome-control-center sharing");
 }

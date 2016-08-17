@@ -216,7 +216,7 @@ var menu = (function() {
         } else if (typeof desktop !== "undefined"){
             Utils.run_desktop(desktop);
         } else if (typeof command !== "undefined") {
-            Utils.run_command(command);
+            exec(command);
         }
     }
 
@@ -633,31 +633,31 @@ var menu = (function() {
     // Handles Settings button. The function is defined
     // in data-handler attribute of the button
     var handleSettings = function() {
-        Utils.run_command("gnome-control-center");
+        exec("gnome-control-center");
     }
 
 // Handles Lock Screen button. The function is defined
     // in data-handler attribute of the button
     var handleLockScreen = function() {
-        Utils.run_command("gnome-screensaver-command -l");
+        exec("gnome-screensaver-command -l");
     }
 
     // Handles LogOut button. The function is defined
     // in data-handler attribute of the button
     var handleLogOut = function() {
-         sessionManager.logout(); 					//Utils.run_command("gnome-session-quit --logout");
+         sessionManager.logout(); 					//exec("gnome-session-quit --logout");
     }
 
 	// Handles Reboot button. The function is defined
     // in data-handler attribute of the button
     var handleReboot = function() {
-         sessionManager.reboot();					//Utils.run_command("gnome-session-quit --reboot");
+         sessionManager.reboot();					//exec("gnome-session-quit --reboot");
     }
 
     // Handles ShutDown button. The function is defined
     // in data-handler attribute of the button
     var handleShutDown = function() {
-         sessionManager.shutdown(); 				//Utils.run_command("gnome-session-quit --power-off");  
+         sessionManager.shutdown(); 				//exec("gnome-session-quit --power-off");  
     }
 
     // Determine whether shutdown is enabled or not.
